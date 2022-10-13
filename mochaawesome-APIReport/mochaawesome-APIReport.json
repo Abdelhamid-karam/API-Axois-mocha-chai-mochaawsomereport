@@ -1,0 +1,141 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 3,
+    "passes": 3,
+    "pending": 0,
+    "failures": 0,
+    "start": "2022-10-04T11:21:01.622Z",
+    "end": "2022-10-04T11:21:04.139Z",
+    "duration": 2517,
+    "testsRegistered": 3,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "16ad9cc9-c89b-4e68-bada-e509e92199b5",
+      "title": "",
+      "fullFile": "W:\\projects\\API axois\\test\\1stapi.js",
+      "file": "\\test\\1stapi.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "2b961596-d641-4b0e-bb62-b09539c821b7",
+          "title": "apiTask",
+          "fullFile": "W:\\projects\\API axois\\test\\1stapi.js",
+          "file": "\\test\\1stapi.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "get Weather forecasts Request async function",
+              "fullTitle": "apiTask get Weather forecasts Request async function",
+              "timedOut": false,
+              "duration": 1178,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.get('http://www.7timer.info/bin/api.pl?lon=113.17&lat=23.09&product=astro&output=json');\n//console.log(response);\n//expect(response.status).to.equal(200);\n//assert.equal(response.status,200);\nresponse.status.should.equal(200);\nexpect(response.data.product).to.equal('astro');\nexpect(response.data.dataseries[0].timepoint).to.equal(3);\n//expect(response.data.dataseries[.wind10m.speed]).to.all.not.null; chai things lib needed \n//response.data.dataseries.wind10m.should.all.have.members('speed'); chai things lib needed \nresponse.data.dataseries.every(i => expect(i.wind10m).to.contains.all.keys('speed'))",
+              "err": {},
+              "uuid": "01c5615f-efc4-4de8-bdd3-4595a580d1b1",
+              "parentUUID": "2b961596-d641-4b0e-bb62-b09539c821b7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Predict age based on a name Request async function",
+              "fullTitle": "apiTask Predict age based on a name Request async function",
+              "timedOut": false,
+              "duration": 1064,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.get('https://api.agify.io', { params: { name: faker.name.firstName() } });\n//console.log(response);\nassert.equal(response.status,200);",
+              "err": {},
+              "uuid": "ec766d3f-480a-4181-a326-00e3570fc122",
+              "parentUUID": "2b961596-d641-4b0e-bb62-b09539c821b7",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "post method create user async function",
+              "fullTitle": "apiTask post method create user async function",
+              "timedOut": false,
+              "duration": 268,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "const response = await axios.post('https://reqres.in/api/users', {\n  data: {\n  \"name\": faker.name.firstName(),\n  \"job\": faker.name.jobTitle()\n  }\n});\n//console.log(response);\nassert.equal(response.status,201);",
+              "err": {},
+              "uuid": "32529d0c-cad8-46fe-9e4c-07c8ced3058f",
+              "parentUUID": "2b961596-d641-4b0e-bb62-b09539c821b7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "01c5615f-efc4-4de8-bdd3-4595a580d1b1",
+            "ec766d3f-480a-4181-a326-00e3570fc122",
+            "32529d0c-cad8-46fe-9e4c-07c8ced3058f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2510,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "10.0.0"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochaawesome-APIReport",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "reportDir": "mochaawesome-APIReport",
+        "reportFilename": "mochaawesome-APIReport"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
